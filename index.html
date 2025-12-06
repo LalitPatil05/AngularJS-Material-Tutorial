@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lalit Patil's Friends Circle - AngularJS Material Design">
+    <title>Friends Circle | Lalit Patil</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body ng-app="MyApp" ng-cloak ng-controller="UserController as ul">
+
+    <!-- Top Toolbar -->
+    <md-toolbar class="md-whiteframe-2dp">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="ul.toggleList()" hide-gt-md aria-label="Toggle Menu">
+                <md-icon>menu</md-icon>
+            </md-button>
+            <h2 flex>Library Team</h2>
+            <span class="toolbar-subtitle" hide-xs hide-sm>MCA-I Project</span>
+        </div>
+    </md-toolbar>
+
+    <!-- Main Content Area -->
+    <div layout="row" flex>
+        
+        <!-- Sidebar Navigation -->
+        <md-sidenav class="md-sidenav-left md-whiteframe-4dp" 
+                    md-component-id="left" 
+                    md-is-locked-open="$mdMedia('gt-md')" 
+                    md-whiteframe="4">
+            
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">My Squad</h1>
+            </md-toolbar>
+
+            <md-content>
+                <md-list>
+                    <md-list-item ng-repeat="user in ul.users" ng-click="ul.selectUser(user)">
+                        <img ng-src="https://api.dicebear.com/7.x/avataaars/svg?seed={{user.name}}" 
+                             class="md-avatar" 
+                             alt="{{user.name}}" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>{{ user.name }}</h3>
+                            <p>{{ user.status }}</p>
+                        </div>
+                        <md-icon ng-if="user === ul.selected" class="md-secondary">check_circle</md-icon>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+
+        <!-- Main Content -->
+        <md-content flex layout-padding>
+            <div class="content-wrapper" layout="column" layout-align="start center">
+                
+                <!-- Profile Card -->
+                <md-card class="profile-card" flex="100" flex-gt-sm="90" flex-gt-md="80">
+                    
+                    <!-- Card Header with Avatar -->
+                    <md-card-header>
+                        <md-card-avatar>
+                            <img ng-src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ul.selected.name}}" 
+                                 class="md-user-avatar-large" 
+                                 alt="{{ul.selected.name}}" />
+                        </md-card-avatar>
+                        <md-card-header-text>
+                            <span class="md-title">{{ ul.selected.name }}</span>
+                            <span class="md-subhead">{{ ul.selected.role }}</span>
+                        </md-card-header-text>
+                    </md-card-header>
+
+                    <!-- Tags/Chips -->
+                    <md-card-content>
+                        <md-chips ng-model="ul.selected.tags" readonly="true">
+                            <md-chip-template>
+                                <span>{{$chip}}</span>
+                            </md-chip-template>
+                        </md-chips>
+
+                        <md-divider></md-divider>
+
+                        <!-- About Section -->
+                        <div class="content-section">
+                            <h3 class="section-heading">
+                                <md-icon>account_circle</md-icon>
+                                About
+                            </h3>
+                            <p class="section-text">{{ ul.selected.content }}</p>
+                        </div>
+
+                        <!-- Joke Section -->
+                        <div class="content-section" ng-if="ul.selected.joke">
+                            <h3 class="section-heading">
+                                <md-icon>mood</md-icon>
+                                Fun Fact
+                            </h3>
+                            <md-card class="joke-card">
+                                <md-card-content>
+                                    <p class="joke-text">{{ ul.selected.joke }}</p>
+                                </md-card-content>
+                            </md-card>
+                        </div>
+
+                        <!-- Quote Section -->
+                        <div class="content-section" ng-if="ul.selected.quote">
+                            <h3 class="section-heading">
+                                <md-icon>format_quote</md-icon>
+                                Favorite Quote
+                            </h3>
+                            <blockquote class="quote-text">
+                                "{{ ul.selected.quote }}"
+                            </blockquote>
+                        </div>
+
+                        <!-- Stats Section -->
+                        <div class="content-section" ng-if="ul.selected.stats">
+                            <h3 class="section-heading">
+                                <md-icon>assessment</md-icon>
+                                Quick Stats
+                            </h3>
+                            <div layout="row" layout-wrap layout-align="space-around center">
+                                <md-card class="stat-card" 
+                                         flex="45" 
+                                         flex-xs="100" 
+                                         ng-repeat="stat in ul.selected.stats">
+                                    <md-card-content layout="column" layout-align="center center">
+                                        <h2 class="stat-value">{{ stat.value }}</h2>
+                                        <p class="stat-label">{{ stat.label }}</p>
+                                    </md-card-content>
+                                </md-card>
+                            </div>
+                        </div>
+
+                    </md-card-content>
+
+                    <!-- Card Actions -->
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-raised" ng-click="ul.shareProfile(ul.selected)">
+                            <md-icon>share</md-icon>
+                            Share
+                        </md-button>
+                        <md-button class="md-raised md-primary" ng-click="ul.makeContact(ul.selected)">
+                            <md-icon>contact_mail</md-icon>
+                            Connect
+                        </md-button>
+                    </md-card-actions>
+
+                </md-card>
+
+                <!-- Footer -->
+                <div class="footer-text">
+                    <p>Created by <strong>Lalit Patil</strong> | MCA-I | Learning AngularJS Material Design</p>
+                </div>
+
+            </div>
+        </md-content>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+/* ============================================
+   TOOLBAR STYLES
+   ============================================ */
+
+md-toolbar {
+    background-color: #1976d2 !important;
+    color: white !important;
+}
+
+md-toolbar .md-toolbar-tools {
+    padding: 0 16px;
+}
+
+md-toolbar h2 {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+}
+
+.toolbar-subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-left: 16px;
+}
+
+md-toolbar .md-icon-button {
+    color: white;
+}
+
+/* ============================================
+   SIDEBAR STYLES
+   ============================================ */
+
+md-sidenav {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    background-color: white;
+}
+
+md-sidenav md-toolbar {
+    background-color: #e3f2fd !important;
+    color: #1976d2 !important;
+    min-height: 64px;
+}
+
+md-sidenav md-toolbar h1 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+md-sidenav md-content {
+    background-color: white;
+}
+
+md-list {
+    padding: 8px 0;
+}
+
+md-list-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+md-list-item:hover {
+    background-color: #f5f5f5;
+}
+
+md-list-item .md-list-item-text h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+}
+
+md-list-item .md-list-item-text p {
+    font-size: 12px;
+    color: #757575;
+    margin: 4px 0 0 0;
+}
+
+md-list-item .md-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+md-list-item .md-secondary {
+    color: #4caf50;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+md-content {
+    background-color: #fafafa;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* ============================================
+   PROFILE CARD
+   ============================================ */
+
+.profile-card {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 24px;
+    background-color: white;
+}
+
+md-card {
+    margin: 16px 0;
+}
+
+md-card-header {
+    padding: 24px;
+    background-color: #f5f5f5;
+}
+
+.md-user-avatar-small {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #1976d2;
+}
+
+md-card-header-text .md-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 4px;
+}
+
+md-card-header-text .md-subhead {
+    font-size: 16px;
+    color: #757575;
+    display: block;
+}
+
+/* ============================================
+   CARD CONTENT
+   ============================================ */
+
+md-card-content {
+    padding: 24px;
+}
+
+md-chips {
+    margin: 16px 0;
+}
+
+md-chips .md-chips {
+    box-shadow: none;
+}
+
+md-chips md-chip {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    font-size: 13px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    margin: 4px 4px 4px 0;
+}
+
+md-divider {
+    margin: 20px 0;
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+
+.content-section {
+    margin: 24px 0;
+}
+
+.section-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.section-heading md-icon {
+    margin-right: 8px;
+    color: #1976d2;
+}
+
+.section-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #616161;
+    margin: 0;
+    text-align: justify;
+}
+
+/* ============================================
+   JOKE CARD
+   ============================================ */
+
+.joke-card {
+    background-color: #fff9c4;
+    border-left: 4px solid #fbc02d;
+    margin: 12px 0;
+}
+
+.joke-card md-card-content {
+    padding: 16px;
+}
+
+.joke-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5d4037;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ============================================
+   QUOTE SECTION
+   ============================================ */
+
+.quote-text {
+    background-color: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #424242;
+    font-style: italic;
+    border-radius: 4px;
+}
+
+/* ============================================
+   STATS CARDS
+   ============================================ */
+
+.stat-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    margin: 8px;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.stat-card md-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1976d2;
+    margin: 0;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #757575;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 8px 0 0 0;
+}
+
+/* ============================================
+   CARD ACTIONS
+   ============================================ */
+
+md-card-actions {
+    padding: 16px 24px;
+    border-top: 1px solid #e0e0e0;
+}
+
+md-card-actions md-button {
+    margin: 0 4px;
+    text-transform: none;
+    font-size: 14px;
+}
+
+md-card-actions md-button md-icon {
+    margin-right: 4px;
+}
+
+md-card-actions .md-button.md-primary {
+    background-color: #1976d2;
+    color: white;
+}
+
+md-card-actions .md-button.md-raised {
+    background-color: white;
+    color: #1976d2;
+    border: 1px solid #e0e0e0;
+}
+
+md-card-actions .md-button.md-raised:hover {
+    background-color: #f5f5f5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer-text {
+    text-align: center;
+    padding: 20px;
+    margin-top: 24px;
+}
+
+.footer-text p {
+    font-size: 14px;
+    color: #757575;
+    margin: 0;
+}
+
+.footer-text strong {
+    color: #1976d2;
+    font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 960px) {
+    md-sidenav {
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .content-wrapper {
+        padding: 16px 12px;
+    }
+
+    .profile-card {
+        margin: 0 0 16px;
+    }
+
+    md-card-header {
+        padding: 20px 16px;
+    }
+
+    md-card-content {
+        padding: 20px 16px;
+    }
+
+    .section-heading {
+        font-size: 17px;
+    }
+
+    .stat-card {
+        margin: 6px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
+
+@media (max-width: 600px) {
+    md-toolbar h2 {
+        font-size: 18px;
+    }
+
+    .content-wrapper {
+        padding: 12px 8px;
+    }
+
+    .profile-card {
+        margin: 0 0 12px;
+    }
+
+    md-card-header {
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    md-card-header md-card-avatar {
+        margin-bottom: 12px;
+    }
+
+    .md-user-avatar-large {
+        width: 64px;
+        height: 64px;
+    }
+
+    md-card-header-text .md-title {
+        font-size: 20px;
+    }
+
+    md-card-header-text .md-subhead {
+        font-size: 14px;
+    }
+
+    md-card-content {
+        padding: 16px;
+    }
+
+    .section-heading {
+        font-size: 16px;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+
+    .stat-card {
+        flex: 100%;
+        margin: 8px 0;
+    }
+
+    .stat-value {
+        font-size: 28px;
+    }
+
+    md-card-actions {
+        padding: 12px 16px;
+        flex-direction: column;
+    }
+
+    md-card-actions md-button {
+        width: 100%;
+        margin: 4px 0;
+    }
+
+    .footer-text {
+        padding: 16px 8px;
+    }
+
+    .footer-text p {
+        font-size: 12px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    md-toolbar,
+    md-sidenav,
+    md-card-actions,
+    .footer-text {
+        display: none;
+    }
+
+    .profile-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+md-button:focus,
+md-list-item:focus {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+}
+
+.md-avatar:focus {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+/* ============================================
+   SMOOTH TRANSITIONS
+   ============================================ */
+
+md-card,
+md-list-item,
+md-button,
+.stat-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
