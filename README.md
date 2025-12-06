@@ -55,7 +55,7 @@ AngularJS_Material/
 
 1. **Clone or download the project**
    ```bash
-   cd C:\Users\lalit\Desktop\MCA-I\Projects\AngularJS_Material
+   https://github.com/LalitPatil05/AngularJS-Material-Tutorial.git
    ```
 
 2. **Open the project**
